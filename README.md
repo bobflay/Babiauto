@@ -30,6 +30,14 @@ around Cocody/Riviera, and a demo rider:
 
 - **email:** `koffi@babiauto.ci`  **password:** `password`
 
+### Driver simulation (demo)
+
+`BABIAUTO_SIMULATE_DRIVERS=true` (default) makes `GET /drivers/nearby` return the
+available drivers drifting on stable orbits around the rider, so the home-screen
+map shows live-moving cars without a real fleet streaming GPS. Each poll returns
+new positions and headings. Set it to `false` to return drivers' last known real
+positions instead (within `BABIAUTO_MATCH_RADIUS_KM`).
+
 ## Domain model
 
 | Model | Purpose |
@@ -68,6 +76,7 @@ Fares are integers in **XOF (F CFA)**.
 | `POST` | `/auth/login` | Login, returns token |
 | `GET`  | `/vehicle-classes` | List vehicle classes + pricing |
 | `GET`  | `/places?q=` | Search the destination catalogue |
+| `GET`  | `/drivers/nearby?lat=&lng=` | Available cars around the rider (home map) |
 | `POST` | `/rides/estimate` | Fare quote per class for a pickup/dropoff |
 
 ### Authenticated (rider)

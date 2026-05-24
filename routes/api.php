@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\DriverRideController;
+use App\Http\Controllers\Api\NearbyDriverController;
 use App\Http\Controllers\Api\PaymentMethodController;
 use App\Http\Controllers\Api\PlaceController;
 use App\Http\Controllers\Api\ProfileController;
@@ -17,6 +18,7 @@ Route::prefix('v1')->group(function () {
 
     Route::get('vehicle-classes', [VehicleClassController::class, 'index']);
     Route::get('places', [PlaceController::class, 'index']);
+    Route::get('drivers/nearby', [NearbyDriverController::class, 'index']);
     Route::post('rides/estimate', [RideController::class, 'estimate']);
 
     // Authenticated (rider)

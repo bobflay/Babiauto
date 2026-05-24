@@ -26,4 +26,12 @@ return [
     */
     'tip_presets' => [0, 200, 500, 1000],
     'max_tip' => env('BABIAUTO_MAX_TIP', 50000),
+
+    /*
+    | Demo simulation: when enabled, the "nearby drivers" endpoint returns
+    | available drivers drifting around the rider so the home-screen map shows
+    | live-moving cars without a real driver fleet streaming positions.
+    */
+    'simulate_drivers' => env('BABIAUTO_SIMULATE_DRIVERS', true),
+    'simulate_radius_km' => env('BABIAUTO_SIMULATE_RADIUS_KM', 2.5),
 ];
